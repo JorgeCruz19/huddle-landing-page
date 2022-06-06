@@ -19,6 +19,7 @@ body {
 img {
 	width: 100%;
 	max-width: 100%;
+	height: auto;
 }
 h1,
 h2,
@@ -32,42 +33,133 @@ h6 {
 a {
 	text-decoration: none;
 }
+
+/* Desktop */
 .container {
 	background-color: var(--violet);
 	background-image: url("../img/bg-desktop.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 100vh;
+	min-height: 100vh;
 }
 .inner-container {
-	padding: 1rem 2rem 0.5rem 2rem;
+	padding: 4.5rem 2rem 0.5rem 2rem;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 .navbar {
-	margin-bottom: 3rem;
+	margin-bottom: 6rem;
 }
 .navbar img {
-	width: 150px;
+	width: 250px;
 }
-.grid {
+.grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 2.5rem;
-}
-.title {
-	font-size: 2.4rem;
-	line-height: 1.5;
-}
-.paragraph {
-	font-size: 0.9rem;
 	margin-bottom: 1rem;
 }
-.button {
-	display: inline-block;
-	color: var(--violet);
+.hero-title {
+	font-size: 3.5rem;
+	line-height: 1.5;
+}
+.hero-paragraph {
+	font-size: 1.3rem;
+	margin-bottom: 2rem;
+	line-height: 1.4;
+}
+.hero-button {
 	background-color: #ffffff;
-	border-radius: 20px;
-	padding: 0.7rem 3rem;
-	font-size: 0.8rem;
+	border-radius: 900px;
 	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+	color: var(--violet);
+	display: inline-block;
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 1.2rem 5rem;
+	transition: all 0.3s ease;
+}
+.hero-button:hover {
+	background-color: var(--soft-magenta);
+	color: #ffffff;
+}
+.footer {
+	text-align: right;
+}
+.footer-link {
+	align-items: center;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	color: #fff;
+	display: inline-flex;
+	height: 22px;
+	font-size: 1.3rem;
+	justify-content: center;
+	line-height: 22px;
+	margin-right: 0.5rem;
+	padding: 22px;
+	width: 22px;
+	transition: all 0.3s ease;
+}
+
+.footer-link:last-of-type {
+	margin-right: 0;
+}
+
+.footer-link:hover {
+	color: var(--soft-magenta);
+	border-color: var(--soft-magenta);
+}
+
+/* Mobile */
+
+@media screen and (max-width: 992px) {
+	.container {
+		background-image: url("../img/bg-mobile.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: top;
+	}
+	.inner-container {
+		padding: 2.5rem 1.8rem 0.5rem 1.8rem;
+	}
+	.navbar img {
+		width: 150px;
+	}
+	.grid-container {
+		grid-template-columns: 1fr;
+		column-gap: 0;
+		margin-bottom: 4rem;
+	}
+	.hero-image {
+		margin-bottom: 2.5rem;
+	}
+	.grid-container div {
+		text-align: center;
+	}
+	.hero-title {
+		font-size: 1.8rem;
+	}
+	.hero-paragraph {
+		font-size: 1rem;
+	}
+	.hero-button {
+		border-radius: 900px;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+
+		font-size: 1rem;
+		font-weight: 600;
+		padding: 0.8rem 5rem;
+	}
+	.footer {
+		text-align: center;
+	}
+	.footer-link {
+		height: 16px;
+		font-size: 1rem;
+		line-height: 16px;
+		padding: 16px;
+		width: 16px;
+	}
 }
